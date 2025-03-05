@@ -1,0 +1,53 @@
+\documentclass[12pt,a4paper]{book}
+
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{caption}
+\usepackage{fancyhdr}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage[utf8]{inputenc}
+\usepackage[backend=biber,style={{ cookiecutter.citation_style }}]{biblatex}
+\addbibresource{references_filtered.bib}
+
+% Page geometry with fixed headheight
+\geometry{
+    a4paper,
+    margin=2.5cm,
+    headheight=14.5pt
+}
+
+% for list
+{% raw %}
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt} \setlength{\parskip}{0pt}
+}
+{% endraw %}
+
+% Title page info
+\title{ {{cookiecutter.title}} }
+\author{ {{cookiecutter.author}} }
+\date{\today}
+
+% Header/footer setup
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{\thepage}
+\fancyhead[RE]{\leftmark}
+\fancyhead[LO]{\rightmark}
+
+\begin{document}
+
+\frontmatter
+\maketitle
+\tableofcontents
+
+\mainmatter
+$body$
+
+\backmatter
+\printbibliography
+
+\end{document}

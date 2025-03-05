@@ -1,0 +1,296 @@
+/* Theme variables */
+:root {
+    --main-color: #2c3e50;
+    --text-color: #333;
+    --link-color: #3498db;
+    --background: #fff;
+    --side-padding: 5%;
+    --toc-background: #f8f9fa;
+    --code-background: #f8f9fa;
+    --border-color: #ddd;
+    --figure-caption: #666;
+    --header-font: "SF Pro Display", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --body-font: "Charter", "Georgia", serif;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --main-color: #60a5fa;
+        --text-color: #e5e7eb;
+        --link-color: #93c5fd;
+        --background: #1a1a1a;
+        --toc-background: #2d2d2d;
+        --code-background: #2d2d2d;
+        --border-color: #404040;
+        --figure-caption: #a3a3a3;
+    }
+}
+
+/* Base layout */
+body {
+    font-family: var(--body-font);
+    line-height: 1.6;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 2rem var(--side-padding);
+    color: var(--text-color);
+    background: var(--background);
+}
+
+/* Typography improvements */
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--header-font);
+    color: var(--main-color);
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    margin-top: 2.5em;
+    margin-bottom: 0.8em;
+    line-height: 1.2;
+}
+
+h1 { font-size: 2.5em; }
+h2 { font-size: 2em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.25em; }
+
+/* Enhanced Table of Contents */
+#TOC {
+    background: var(--toc-background);
+    padding: 2em;
+    margin: 2em 0;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+#TOC::before {
+    content: "Table of Contents";
+    font-family: var(--header-font);
+    font-size: 1.5em;
+    color: var(--main-color);
+    margin-bottom: 1em;
+    display: block;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5em;
+}
+
+#TOC ul {
+    list-style-type: none;
+    padding-left: 1.5em;
+}
+
+#TOC li {
+    margin: 0.5em 0;
+    padding-left: 0.5em;
+    border-left: 2px solid transparent;
+    transition: border-color 0.2s;
+}
+
+#TOC li:hover {
+    border-left-color: var(--main-color);
+}
+
+#TOC a {
+    color: var(--main-color);
+    text-decoration: none;
+    display: block;
+}
+
+/* Enhanced Figures */
+figure {
+    margin: 2.5em 0;
+    text-align: center;
+    background: var(--toc-background);
+    padding: 1em;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 1em;
+    border-radius: 4px;
+}
+
+figcaption {
+    font-family: var(--header-font);
+    font-style: italic;
+    font-size: 0.95em;
+    color: var(--figure-caption);
+    max-width: 90%;
+    margin: 0.5em auto;
+    line-height: 1.4;
+}
+
+/* Custom figure styling */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Figure captions */
+img + em {
+    display: block;
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 0.5em;
+}
+
+/* Math display */
+.arithmatex {
+    font-size: 1.1em;
+}
+
+/* Better Tables */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 2em 0;
+    overflow-x: auto;
+    display: block;
+}
+
+th, td {
+    padding: 0.75em;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+
+th {
+    background: var(--toc-background);
+    font-family: var(--header-font);
+    font-weight: 600;
+}
+
+tr:nth-child(even) {
+    background: var(--toc-background);
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+}
+
+th, td {
+    padding: 8px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f5f5f5;
+}
+
+/* Enhanced Code Blocks */
+pre, code {
+    background: var(--code-background);
+    border-radius: 6px;
+    font-family: "SF Mono", "Fira Code", Consolas, Monaco, monospace;
+}
+
+pre {
+    padding: 1.2em;
+    overflow-x: auto;
+    border: 1px solid var(--border-color);
+}
+
+/* Code blocks */
+pre {
+    padding: 1em;
+    background-color: #f8f8f8;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    overflow-x: auto;
+}
+
+code {
+    padding: 0.2em 0.4em;
+}
+
+/* Citations */
+.citation {
+    color: #2980b9;
+    font-style: italic;
+}
+
+/* Footnotes */
+.footnote {
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Better Links */
+a {
+    color: var(--link-color);
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--main-color);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    :root {
+        --side-padding: 1rem;
+    }
+    
+    body {
+        font-size: 16px;
+    }
+    
+    h1 { font-size: 2em; }
+    h2 { font-size: 1.75em; }
+    h3 { font-size: 1.4em; }
+    
+    #TOC {
+        padding: 1em;
+    }
+    
+    figure {
+        padding: 0.5em;
+    }
+    
+    table {
+        font-size: 0.9em;
+    }
+}
+
+/* Print Optimizations */
+@media print {
+    body {
+        padding: 0;
+        max-width: none;
+        font-size: 11pt;
+    }
+    
+    a {
+        color: inherit;
+    }
+    
+    #TOC {
+        background: none;
+        box-shadow: none;
+        break-after: page;
+    }
+    
+    figure {
+        break-inside: avoid;
+        background: none;
+        box-shadow: none;
+    }
+    
+    pre, code {
+        background: none;
+        border: 1px solid #ddd;
+    }
+}

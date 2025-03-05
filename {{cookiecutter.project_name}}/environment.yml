@@ -1,0 +1,19 @@
+name: panmkdocs
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python
+  - pip
+  - pandas
+  - openpyxl # For Excel file handling
+  - numpy
+  - mkdocs=1.5.3
+  - pymdown-extensions=10.7
+  - mkdocs-redirects=1.2.1
+  - mkdocs-include-markdown-plugin=6.0.4
+  - mkdocs-bibtex
+  - pandoc
+
+    

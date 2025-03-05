@@ -1,0 +1,51 @@
+\documentclass[a4paper]{article}
+
+% Nature formatting requirements
+\usepackage[left=2.5cm,right=2.5cm,top=2.5cm,bottom=2.5cm]{geometry}
+\usepackage{times}  % Times New Roman font
+\usepackage{setspace}
+\onehalfspacing
+
+% Required packages for pandoc compatibility
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{url}
+\usepackage{hyperref}
+
+% Nature citation style
+\bibliographystyle{unsrt}  % Numeric citations in order of appearance
+
+% Title and author information from pandoc variables
+\title{\Large $title$}
+\author{$for(author)$$author$$sep$, $endfor$}
+
+% Affiliation handling
+$if(institute)$
+\address{$for(institute)$$institute$$sep$ \\ $endfor$}
+$endif$
+
+% Abstract from pandoc metadata
+$if(abstract)$
+\begin{abstract}
+$abstract$
+\end{abstract}
+$endif$
+
+\begin{document}
+\maketitle
+
+% Main content placeholder for pandoc
+$body$
+
+% Bibliography handling
+$if(bibliography)$
+\bibliography{$for(bibliography)$$bibliography$$sep$,$endfor$}
+$endif$
+
+\end{document}

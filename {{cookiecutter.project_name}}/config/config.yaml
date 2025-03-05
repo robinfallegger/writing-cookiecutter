@@ -1,0 +1,46 @@
+metadata:
+  title: {{ cookiecutter.title }}
+  subtitle: {{ cookiecutter.subtitle }}
+  author: {{ cookiecutter.author }}
+  date: "2024"
+  institution: {{ cookiecutter.institution }}
+  department: {{ cookiecutter.department }}
+  keywords:
+    - Keyword 1
+    - Keyword 2
+    - Keyword 3
+  abstract: |
+    Your abstract text goes here. This will be included in both 
+    PDF and HTML outputs.
+  nocite: '@*'
+
+output-file: build/pdf/thesis.pdf
+
+pdf-engine: xelatex
+template: config/main.tex
+number-sections: true
+toc: true
+toc-depth: 3
+standalone: true
+
+variables:
+  lang: en
+  papersize: a4
+  fontsize: 12pt
+  linestretch: 1.5
+  geometry:
+    - margin=2.5cm
+    - includehead
+    - includefoot
+  secnumdepth: 3
+  book: true
+  chapter-number-base: 1
+
+bibliography: config/references_filtered.bib
+csl: config/{{ cookiecutter.citation_style }}.csl
+
+html-math-method:
+  method: mathjax
+
+css:
+  - assets/style.css

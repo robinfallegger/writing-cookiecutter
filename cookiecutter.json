@@ -1,0 +1,14 @@
+{
+    "project_name": "academic-document",
+    "author": "",
+    "institution": "University Hospital Heidelberg",
+    "department": "Institute for Computational Biomedicine",
+    "title": "",
+    "subtitle": "",
+    "citation_style": ["apa", "nature", "ieee", "vancouver", "cell"],
+    "_copy_without_render": [
+        "*.html",
+        "*.css",
+        "*.js"
+    ]
+}
